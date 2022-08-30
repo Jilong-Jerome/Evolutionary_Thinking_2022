@@ -12,7 +12,7 @@ Special Thanks to Moisès Coll Macià who structured the exercise materials.
 
 ## Outline
 
-### Week 1
+### Week 1 []
 #### Session 1 Reading the Tree and Installing MEGA
 Short Intro
 
