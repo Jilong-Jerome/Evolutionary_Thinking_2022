@@ -1,14 +1,17 @@
 # Evolutionary-Thinking-2021 -- Week 35
 
+[Slides for today]()
+
+
 We will go through the pretest of "tree", basically a general understanding of the phylogeny.
 
-Then we will finish the installation of MEGAX for tomorrow's exercises.
+Then we will finish the installation of MEGA 11 for Friday's exercises.
 
 ## Tree Pretest
 
 Pen and Paper exercises
 
-45 min group works with your peers before starting checking the answers.
+30 min group works with your peers before starting checking the answers.
 
 HINTs:
 
@@ -18,7 +21,7 @@ HINTs:
 
 [Solutions](https://docs.google.com/document/d/1gca29t0lDALeHBa5VoLKm_OJs6BO720adv7xBndXyA4/edit?usp=sharing) to the pretest
 
-## MEGA X installation
+## MEGA 11 installation
 Follow the guide from [MEGA](https://www.megasoftware.net) to download the corresponding version for your system.
 
 
