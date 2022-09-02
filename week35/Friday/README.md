@@ -13,7 +13,7 @@ GenBank is a useful database that contains DNA, RNA and protein sequences public
 
 In order to use GenBank efficiently, as other databases such as [PubMed](https://pubmed.ncbi.nlm.nih.gov) used to search for papers, it is a good idea to use specific search fields. These can be specified as e.g. [Author], [pdat] (publication time) and [Title] and use logical operators to combine search terms, e.g. AND, OR, NOT. For example, try to search “Zhao[Author] AND Wu F[Author] AND Yu[Author] AND coronavirus[Title] AND 2020[pdat]” on [PubMed](https://pubmed.ncbi.nlm.nih.gov). Which paper comes up?
 
-By searching papers in [PubMed](https://pubmed.ncbi.nlm.nih.gov) and [GenBank](https://www.ncbi.nlm.nih.gov/genbank/), answer the following questions:
+By searching papers in [PubMed](https://pubmed.ncbi.nlm.nih.gov) and [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) (and Google for sure), answer the following questions:
 
 1. Find and download the paper of the first sequence of the human genome by the International Human Genome Sequencing Consortium or the one assembled by Craig Venter et al in 2001. Where was it published? How can the sequence be obtained?
 2. Find the paper on the high coverage archaic Denisovan sequence published by Svante Pääbo's group published in 2012 and answer the same questions. Who were the Denisovans?
