@@ -1,4 +1,4 @@
-# Wednesday Week35
+# Friday Week35
 
 ## Work plan
 
