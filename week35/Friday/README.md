@@ -1,7 +1,7 @@
 # Friday Week35
 
 
-[Slides for today](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/blob/main/week35/Wednesday/Week_1.pdf)
+[Slides for today](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/blob/main/week35/Friday/Week_1_s2.pdf)
 
 ## Work plan
 
