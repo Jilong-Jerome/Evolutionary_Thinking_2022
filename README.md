@@ -25,7 +25,7 @@ Short review on alignments algorithms
 Distance matrix, how do we define "distance"
 
 ### Week 2
-#### [Session 1]() Substituion models
+#### [Session 1](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/tree/main/week36/Wednesday) Substituion models
 
 Observed pairwise difference and substitutions.
 

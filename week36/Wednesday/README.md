@@ -1,4 +1,4 @@
-# Monday Week37
+# Wednesday Week36
 
 ## Work plan
 
@@ -12,7 +12,9 @@ D Posada, K A Crandall, [MODELTEST: testing the model of DNA substitution](https
 
 Before reading the paper, read G5. 
 
-Then, you are going to comment it in groups (4-5 people) and answer the questions that you can find in the [shared google docs](https://docs.google.com/document/d/1fFOF-OkJ7cEGPsnrtYN_0w4WoL3BDyWpdSNJKtCj7bk/edit?usp=sharing). Each group is going to be in charge of some questions and they will have to write the answer that we all come up with.
+Then, you are going to comment it in groups and answer the questions that you can find in the [shared google docs](https://docs.google.com/document/d/1fFOF-OkJ7cEGPsnrtYN_0w4WoL3BDyWpdSNJKtCj7bk/edit?usp=sharing). 
+
+Each group is going to be in charge of some questions and please write your answers in the google doc file about what you discussed.
 
 
 
