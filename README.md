@@ -26,8 +26,11 @@ Distance matrix, how do we define "distance"
 
 ### Week 2
 #### [Session 1]() Substituion models
+
 Observed pairwise difference and substitutions.
+
 Jukes and Cantor's model and Kimura's model
+
 Paper Discussion: [Modeltest: testing the model of DNA substitution]()
 
 #### [Session 2]() MEGA exercises - choosing substitution model and building phylogeny trees.
