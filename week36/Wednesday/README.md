@@ -1,6 +1,6 @@
 # Wednesday Week36
 
-[Slides for today]()
+[Slides for today](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/blob/main/week36/Wednesday/Week_2_s1.pdf)
 
 ## Work plan
 
