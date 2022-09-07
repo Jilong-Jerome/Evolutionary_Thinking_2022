@@ -35,3 +35,11 @@ Paper Discussion: [Modeltest: testing the model of DNA substitution](https://wat
 
 #### [Session 2](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/tree/main/week36/Friday) MEGA exercises - choosing substitution model and building phylogeny trees.
 
+Distance based phylogeny tree building algorithms - UPGMA and NJ
+
+Finding the best fitted substitution model using MEGA
+
+Building your own phylogeny tree using MEGA.
+- Maximum likelihood
+- Maximum Parsimony
+- Distance based methods
