@@ -17,8 +17,8 @@ This week we are going to explore which substitution model fits best our data, w
 Here we are going to test which substitution model is the best of our data.
 
 1. Download [`primates.meg`](primates.meg) which is the one from Chapter 3 in Nei and Kumar.
-2. Open MEGAX and import this data to MEGAX. This can be easily done dragging the file to the main MEGAX window or cliking on the **DATA** button. 
-3. Click **MODELS** on the main MEGAX window and click **Find Best DNA/Protein Models (ML)...**
+2. Open MEGA11 and import this data to MEGA11. This can be easily done dragging the file to the main MEGA11 window or cliking on the **DATA** button. 
+3. Click **MODELS** on the main MEGA11 window and click **Find Best DNA/Protein Models (ML)...**
 
 This will estimate likelihoods for each substitution model available and rank them according to the Bayesian information criterion (BIC). This value is similar to AIC. For now just accept that the smallest value is best.
 
@@ -36,7 +36,7 @@ From now on, before you start any analysis you are well advised to determine the
 
 ### 2. Tree building
 
-#### 2.1. Tree building MEGAX tutorial
+#### 2.1. Tree building MEGA11 tutorial
 
 <img src="Fig3.png" width="75%">
 
