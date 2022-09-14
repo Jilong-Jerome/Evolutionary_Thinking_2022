@@ -43,3 +43,14 @@ Building your own phylogeny tree using MEGA.
 - Maximum likelihood
 - Maximum Parsimony
 - Distance based methods
+
+### Week 3
+#### [Session 1](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/tree/main/week37/Wednesday) Molecular clock - dates the time since divergence
+
+How does molecular clock work ?
+
+Calibraton of molecular clock.
+
+Assumptions of molecular clock.
+
+Relaxation for the assumptioms.

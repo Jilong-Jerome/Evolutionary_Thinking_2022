@@ -1,5 +1,5 @@
 # Tuesday Week37 
-
+[slides for today]()
 ## Work plan
 
 We are going to discuss the insect phylogenetics paper and answer some questions about it in a shared google docs document.
