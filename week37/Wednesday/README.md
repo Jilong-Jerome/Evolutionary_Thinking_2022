@@ -1,5 +1,5 @@
-# Tuesday Week37 
-[slides for today]()
+# Wednesday Week37 
+[slides for today](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/blob/main/week37/Wednesday/Week_3_s1.pdf)
 ## Work plan
 
 We are going to discuss the insect phylogenetics paper and answer some questions about it in a shared google docs document.
