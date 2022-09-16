@@ -1,4 +1,4 @@
-# Wednesday Week37
+# Friday Week37
 
 ## Work plan
 
