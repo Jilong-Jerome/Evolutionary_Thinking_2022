@@ -58,3 +58,11 @@ Relaxation for the assumptioms.
 #### [Session 2](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/tree/main/week37/Friday) Handin 1 - Phylogeny Trees
 
 Working on [handin 1](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/tree/main/handin_1)
+
+### Week 4
+#### [Session 1](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/tree/main/week38/Wednesday) Paper Discussion: HIV transmission in dental practice
+
+Review and practice on the phylogenetics from previous weeks.
+
+[HIV transmission paper](https://science.sciencemag.org/content/256/5060/1165)
+
