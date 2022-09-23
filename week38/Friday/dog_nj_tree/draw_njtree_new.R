@@ -21,14 +21,15 @@ tre <- root(tre, out=11)
 id <- cbind(id,group)
 p1 <- ggtree(tre,layout = "circular",size = 1.5)
 id
-png("140tree_len.png",width = 2000,height= 2000)
-#ggtree(tre,layout = "circular",size = 1.5) %<+% id +
-id %>% ggtree(tre,layout = "circular",size = 1.5)+
+png("141tree_len.png",width = 2000,height= 2000)
+ggtree(tre,layout = "circular",size = 1.5) %<+% id +
   geom_tippoint(aes(color = group3,shape = group2),size = 6)+
   geom_tiplab2(aes(color = group3), align = T, linetype = NA, size = 10, offset = 5)+
-  theme_tree2(plot.margin = margin(0,0,0,0))+
-  scale_colour_manual(name = "Group", values = colorRampPalette(brewer.pal(9,"Set1"))(19))+
-  scale_shape_manual(name ="Group", values = c(19,17,15))+
-  theme(
-  legend.position = "none")
+  theme_tree2(plot.margin = margin(0,0,0,0))
+  ### Customizing color manual and shape manual for the plots
+  #scale_colour_manual(name = "Group", values = colorRampPalette(brewer.pal(9,"Set1"))(24))+
+  #scale_shape_manual(name ="Group", values = c(19,17,15,1,2,3,4))+
+  ### Hide the legend information
+  #theme(
+  #legend.position = "none")
 dev.off()
