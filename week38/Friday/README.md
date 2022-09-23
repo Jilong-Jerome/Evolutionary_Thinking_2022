@@ -40,3 +40,7 @@ You can check my output [here](ape_intro.md).
 If you already know some about R and the tidyverse. Here is an tree visualization extension with ggplot-like version.
 
 [ggtree](https://yulab-smu.top/treedata-book/chapter4.html)
+
+Examples for creating an phylogeny tree for 140 canid individuals and customizing colors and shapes of tipnodes and tiplabels according to the canid group information. See reference at [140-canids](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/tree/main/week38/Friday/dog_nj_tree)
+
+<img src="./dog_nj_tree/141tree_len.png" width="75%"> 
