@@ -35,7 +35,7 @@ Once you are more confident with R, you can follow the introduction to the `ape`
 You can check my output [here](ape_intro.md).
 
 
-### 2. Phylogenetics in R with `ggtree`
+### 3. Phylogenetics in R with `ggtree`
 
 > Jilong:
 
