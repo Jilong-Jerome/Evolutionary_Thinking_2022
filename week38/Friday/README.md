@@ -41,6 +41,11 @@ If you already know some about R and the tidyverse. Here is an tree visualizatio
 
 [ggtree](https://yulab-smu.top/treedata-book/chapter4.html)
 
+
+See [Installation of ggtree](https://bioconductor.org/packages/release/bioc/html/ggtree.html) as the install.packages("ggtree") might not work for R version 4.2.1
+
+If you successfully install all the required packages realted to ggtree, you might try the following example codes to reproduce the shown figures or even customizing a bit yourself :)
+
 Examples for creating an phylogeny tree for 140 canid individuals and customizing colors and shapes of tipnodes and tiplabels according to the canid group information. See reference at [140-canids](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/tree/main/week38/Friday/dog_nj_tree)
 
 <img src="./dog_nj_tree/141tree_len.png" width="75%"> 
