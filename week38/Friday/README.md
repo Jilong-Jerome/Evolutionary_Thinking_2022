@@ -34,3 +34,9 @@ Once you are more confident with R, you can follow the introduction to the `ape`
 
 You can check my output [here](ape_intro.md).
 
+
+> Jilong:
+
+If you already know some about R and the tidyverse. Here is an tree visualization extension with ggplot-like version.
+
+[ggtree](https://yulab-smu.top/treedata-book/chapter4.html)
