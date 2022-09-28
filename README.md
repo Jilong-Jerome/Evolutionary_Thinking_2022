@@ -66,3 +66,15 @@ Review and practice on the phylogenetics from previous weeks.
 
 [HIV transmission paper](https://science.sciencemag.org/content/256/5060/1165)
 
+### Week 5
+#### [Session 1](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/tree/main/week39/Wednesday) Basis of Population Genetics
+
+Terminology in Population Genetics
+
+Hardy-Weinberg Equilibrium
+
+Wright-Fisher model and Genetic Drift
+
+#### [Session 2](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/tree/main/week39/Friday) Simulations of Wright-Fisher model and coalescence
+
+Coalescence Theory
