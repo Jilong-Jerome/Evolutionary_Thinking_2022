@@ -77,4 +77,12 @@ Wright-Fisher model and Genetic Drift
 
 #### [Session 2](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/tree/main/week39/Friday) Simulations of Wright-Fisher model and coalescence
 
+R exercises
+
 Coalescence Theory
+
+Coalescence time and exponential distribution
+
+Genetic Drift
+
+Genetic drift and population size
