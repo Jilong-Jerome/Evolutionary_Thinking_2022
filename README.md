@@ -86,3 +86,6 @@ Coalescence time and exponential distribution
 Genetic Drift
 
 Genetic drift and population size
+
+### Week6
+#### [Session 1](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/tree/main/week40/Wednesday) Population Subdivision, Demography Inference, LD
