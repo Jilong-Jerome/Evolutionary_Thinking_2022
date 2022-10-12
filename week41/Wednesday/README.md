@@ -1,5 +1,7 @@
 # Tuesday Week41
 
+[slides for today](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/blob/main/week41/Wednesday/Week_7_s1.pdf)
+
 ## Work plan
 
 ### Nielsen and Slatkin book exercises - Chapter 7, 8
