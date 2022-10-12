@@ -107,3 +107,4 @@ Genetic hitchhiking and selection sweep
 
 Methods of selection detection
 
+#### [Session 2](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/tree/main/week41/Friday) Testing for selection using dn/ds
