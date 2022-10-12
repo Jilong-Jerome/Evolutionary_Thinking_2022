@@ -95,4 +95,15 @@ Genetic drift and population size
 BIRC seminar
 
 ### Week7
-#### [Session 1](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/tree/main/week41/Wednesday)
+#### [Session 1](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/tree/main/week41/Wednesday) Selection
+
+Vialility difference and selection coefficient
+
+Type of selections
+
+Trajectories of mutation under selection
+
+Genetic hitchhiking and selection sweep
+
+Methods of selection detection
+
