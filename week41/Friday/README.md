@@ -1,4 +1,4 @@
-# Wednesday Week41
+# Friday Week41
 
 ## Work plan 
 
