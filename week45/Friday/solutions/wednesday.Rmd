@@ -1,0 +1,159 @@
+---
+title: "ET_week45"
+author: "Jilong"
+date: "11/10/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## R load the data with tidyverse
+
+```{r data_loading}
+genes <- read_tsv("genes.txt")
+variants <- read_tsv("variants.txt")
+copies <- read_tsv("copyNumbers.txt")
+```
+
+## Questions
+```{r}
+## Question 1
+# get the number of snps vector for all genes
+nsnps<-c()
+for (i in seq(1,NROW(genes),1)){
+  gene <- genes$Symbol[i]
+  snps <- NROW(variants%>%filter(Position>= genes$coorStart[i] & Position <= genes$coorEnd[i])%>%filter(Type == "SNP"))
+  nsnps <- c(nsnps,snps)
+}
+# add the vector as a column
+stat_genes <- genes %>% add_column(N_snps = nsnps)
+# calculate the mean frequency
+stat_genes%>%mutate(snp_f = N_snps/Length)%>%select(snp_f)%>%summarise(across(everything(),
+                                                                              mean))
+```
+
+```{r}
+## Question 2
+stat_genes%>%mutate(snp_f = N_snps/Length)%>%arrange(desc(snp_f))%>%head(1)
+```
+
+```{r}
+## Question 3
+N_nsnps<-c()
+for (i in seq(1,NROW(genes),1)){
+  gene <- genes$Symbol[i]
+  snps <- NROW(variants%>%filter(Position>= genes$coorStart[i] & Position <= genes$coorEnd[i])%>%filter(Type != "SNP"))
+  N_nsnps <- c(N_nsnps,snps)
+}
+# add the vector as a column
+stat_genes <- stat_genes %>% add_column(N_nsnps = N_nsnps)
+# calculate the mean frequency
+stat_genes%>%mutate(nsnp_f = N_nsnps/Length)%>%select(nsnp_f)%>%summarise(across(everything(),
+                                                                              mean))
+```
+
+```{r}
+## Question 4
+stat_genes%>%mutate(nsnp_f = N_nsnps/Length)%>%arrange(desc(nsnp_f))%>%head(1)
+
+```
+
+```{r}
+## Question 5
+copies %>% gather(key = "gene", value = "copy_number", -Haplogroup,-Ind)%>%
+  group_by(Ind)%>%summarise(mean_cp = mean(copy_number))%>%arrange(desc(mean_cp))%>%head(1)
+```
+
+```{r}
+## Question 6
+copies %>% gather(key = "gene", value = "copy_number", -Haplogroup,-Ind)%>%
+  group_by(gene)%>%summarise(mean_cp = mean(copy_number))%>%arrange(desc(mean_cp))%>%head(1)
+```
+
+```{r}
+## Question 7
+var_across_gene <- copies %>% gather(key = "gene", value = "copy_number", -Haplogroup,-Ind)%>%
+  group_by(Ind)%>%summarise(var_cp = var(copy_number))%>%select(var_cp)%>%summarise(across(everything(),
+                                                                              mean))
+var_across_ind <- copies %>% gather(key = "gene", value = "copy_number", -Haplogroup,-Ind)%>%
+  group_by(gene)%>%summarise(var_cp = var(copy_number))%>%select(var_cp)%>%summarise(across(everything(),
+                                                                              mean))
+```
+
+```{r}
+## Question 8
+gene_mean_cp <- copies %>% gather(key = "Symbol", value = "copy_number", -Haplogroup,-Ind)%>%
+  group_by(Symbol)%>%summarise(mean_cp = mean(copy_number))
+final_gene <- right_join(stat_genes,gene_mean_cp,by="Symbol")%>%mutate(snp_f = N_snps/Length)
+cor(final_gene$mean_cp,final_gene$snp_f)
+```
+
+```{r}
+# ## Question 9
+# final_gene%>%mutate(fix_snp_f = N_snps/(Length*mean_cp))%>%arrange(desc(fix_snp_f))%>%head(1)
+```
+ 
+ 
+```{r questions}
+# ## Question 1
+# # get the number of snps vector for all genes
+# nsnps<-c()
+# for (i in seq(1,NROW(genes),1)){
+#   gene <- genes$Symbol[i]
+#   snps <- NROW(variants%>%filter(Position>= genes$coorStart[i] & Position <= genes$coorEnd[i])%>%filter(Type == "SNP"))
+#   nsnps <- c(nsnps,snps)
+# }
+# # add the vector as a column
+# stat_genes <- genes %>% add_column(N_snps = nsnps)
+# # calculate the mean frequency
+# stat_genes%>%mutate(snp_f = N_snps/Length)%>%select(snp_f)%>%summarise(across(everything(),
+#                                                                               mean))
+# stat_genes
+# ## Question 2
+# stat_genes%>%mutate(snp_f = N_snps/Length)%>%arrange(desc(snp_f))%>%head(1)
+# 
+# ## Question 3
+# N_nsnps<-c()
+# for (i in seq(1,NROW(genes),1)){
+#   gene <- genes$Symbol[i]
+#   snps <- NROW(variants%>%filter(Position>= genes$coorStart[i] & Position <= genes$coorEnd[i])%>%filter(Type != "SNP"))
+#   N_nsnps <- c(N_nsnps,snps)
+# }
+# # add the vector as a column
+# stat_genes <- stat_genes %>% add_column(N_nsnps = N_nsnps)
+# # calculate the mean frequency
+# stat_genes%>%mutate(nsnp_f = N_nsnps/Length)%>%select(nsnp_f)%>%summarise(across(everything(),
+#                                                                               mean))
+# 
+# ## Question 4
+# stat_genes%>%mutate(nsnp_f = N_nsnps/Length)%>%arrange(desc(nsnp_f))%>%head(1)
+# 
+# ## Question 5
+# copies %>% gather(key = "gene", value = "copy_number", -Haplogroup,-Ind)%>%
+#   group_by(Ind)%>%summarise(mean_cp = mean(copy_number))%>%arrange(desc(mean_cp))%>%head(1)
+# 
+# ## Question 6
+# copies %>% gather(key = "gene", value = "copy_number", -Haplogroup,-Ind)%>%
+#   group_by(gene)%>%summarise(mean_cp = mean(copy_number))%>%arrange(desc(mean_cp))%>%head(1)
+# 
+# ## Question 7
+# var_across_gene <- copies %>% gather(key = "gene", value = "copy_number", -Haplogroup,-Ind)%>%
+#   group_by(Ind)%>%summarise(var_cp = var(copy_number))%>%select(var_cp)%>%summarise(across(everything(),
+#                                                                               mean))
+# var_across_ind <- copies %>% gather(key = "gene", value = "copy_number", -Haplogroup,-Ind)%>%
+#   group_by(gene)%>%summarise(var_cp = var(copy_number))%>%select(var_cp)%>%summarise(across(everything(),
+#                                                                               mean))
+# ## Question 8
+# gene_mean_cp <- copies %>% gather(key = "Symbol", value = "copy_number", -Haplogroup,-Ind)%>%
+#   group_by(Symbol)%>%summarise(mean_cp = mean(copy_number))
+# final_gene <- right_join(stat_genes,gene_mean_cp,by="Symbol")%>%mutate(snp_f = N_snps/Length)
+# cor(final_gene$mean_cp,final_gene$snp_f)
+# 
+# ## Question 9
+# final_gene%>%mutate(fix_snp_f = N_snps/(Length*mean_cp))%>%arrange(desc(fix_snp_f))%>%head(1)
+# 
+# ## Question 10
+```
