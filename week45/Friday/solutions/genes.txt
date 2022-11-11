@@ -1,0 +1,25 @@
+Symbol	Class	Tissue_expression	X_linked_Homologue	coorStart	coorEnd	Length
+SRY	X-degenerate	Predominantly testis	SOX3	2786855	2787741	886
+RPS4Y1	X-degenerate	Ubiquitous	RPS4X	2841582	2866956	25374
+ZFY	X-degenerate	Teeth	ZFX	2934416	2982508	48092
+AMELY	X-degenerate	Fetal brain, prostate	AMELX	6865918	6911937	46019
+TBL1Y	X-degenerate	Ubiquitous	TBL1X	6910686	7091749	181063
+PRKY	X-degenerate	Ubiquitous	PRKX	7273972	7381547	107575
+USP9Y	X-degenerate	Ubiquitous	USP9X	12701231	12860844	159613
+DBY	X-degenerate	Ubiquitous	DBX	12904108	12920478	16370
+UTY	X-degenerate	Ubiquitous	UTX	13233920	13480670	246750
+TMSB4Y	X-degenerate	Ubiquitous	TMSB4X	13703567	13706024	2457
+NLGN4Y	X-degenerate	Fetal brain, brain, prostate, testis	NLGN4X	14522608	14844945	322337
+TXLNGY	X-degenerate	Ubiquitous	CXorf15	19567358	19607170	39812
+KDM5D	X-degenerate	Ubiquitous	SMCX	19705415	19744939	39524
+EIF1AY	X-degenerate	Ubiquitous	EIF1AX	20575711	20593154	17443
+RPS4Y2	X-degenerate	Ubiquitous	RPS4X	20756068	20781056	24988
+TSPY	Ampliconic	Testis	NaN	9466955	9469749	2794
+VCY	Ampliconic	Testis	VCX	13985772	13986512	740
+XKRY	Ampliconic	Testis	NaN	17768980	17770560	1580
+CDY	Ampliconic	Testis	NaN	25622115	25634745	12630
+HSFY	Ampliconic	Testis	NaN	18546685	18588963	42278
+RBMY1A1	Ampliconic	Testis	RBMX	21534902	21561014	26112
+PRY	Ampliconic	Testis	NaN	22484280	22515543	31263
+BPY2	Ampliconic	Testis	NaN	22984263	23005465	21202
+DAZ	Ampliconic	Testis	NaN	23129355	23199123	69768

@@ -1,0 +1,126 @@
+---
+title: "week45"
+author: "Jilong"
+date: "11/11/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+```{r}
+genes <- read_tsv("genes.txt")
+snps <- read_tsv("variants.txt")
+copy_number <- read_tsv("copyNumbers.txt")
+```
+
+## Q1 mean SNP frequency across genes
+```{r}
+snp_count_vec <- c()
+snp_SNP_vec <- c()
+snp_nonSNP_vec <-c()
+for (gene in 1:nrow(genes)) {
+   start <- genes[[gene,"coorStart"]]
+   end <- genes[[gene,"coorEnd"]]
+   print(snps%>%filter(Position>start)%>%filter(Position<end)%>%NROW())
+   total <- snps%>%filter(Position>start)%>%filter(Position<end)%>%NROW()
+   SNP <- snps%>%filter(Position>start)%>%filter(Position<end)%>%
+     filter(Type == "SNP")%>%NROW()
+   nonSNP <- snps%>%filter(Position>start)%>%filter(Position<end)%>%
+     filter(Type != "SNP")%>%NROW()
+   snp_count_vec <- c(snp_count_vec,total)
+   snp_SNP_vec <- c(snp_SNP_vec,SNP)
+   snp_nonSNP_vec <- c(snp_nonSNP_vec,nonSNP)
+}
+genes_mut <- cbind(genes,snp_count_vec,snp_SNP_vec,snp_nonSNP_vec)%>%
+  mutate(SNP_f = snp_SNP_vec/Length)%>%
+  mutate(non_SNP_f = snp_nonSNP_vec/Length)%>%
+  select(gene = Symbol,SNP_f,non_SNP_f)
+mean(genes_mut$SNP_f)
+mean(genes_mut$non_SNP_f)
+genes_mut%>%arrange(desc(SNP_f))
+```
+4. Which gene has the highest non-SNP frequency per position and what is the value?
+5. Which individual (column Ind in the copyNumbers data.frame) has the highest mean copy number across genes?
+6. Which gene has the highest mean copy number across individuals?
+```{r}
+genes_mut%>%arrange(desc(non_SNP_f))
+
+copy_number_long <- copy_number%>%gather(key = "gene", value = "copy_number", AMELY:PRY)
+
+copy_number_long%>%group_by(Ind)%>%
+  summarise(copy_mean = mean(copy_number))%>%
+  arrange(desc(copy_mean))
+
+copy_number_long%>%group_by(gene)%>%
+  summarise(copy_mean = mean(copy_number))%>%
+  arrange(desc(copy_mean))
+```
+7. Is mean copy number more vairable across genes or individuals? Why might this be the case?
+8. What is the correlation coefficient between mean gene copy number and SNP frequency? Is this expected and why?
+9. For each gene, re-caclulate SNP frequency by normalizing the number of SNPs with the product of gene length and mean copy number (i.e. the sum total sequence length of all copies of a gene). Which gene has the highest SNP frequency now?
+10. Why do the results differ between question 2 and 9? (Hint: Look at the "SNP calling in palindromes" section of the paper.)
+
+```{r}
+across_ind <- copy_number_long%>%group_by(Ind)%>%
+  summarise(copy_mean = mean(copy_number))%>%
+  arrange(desc(copy_mean))
+across_gene <- copy_number_long%>%group_by(gene)%>%
+  summarise(copy_mean = mean(copy_number))%>%
+  arrange(desc(copy_mean))
+var(across_ind$copy_mean)
+var(across_gene$copy_mean)
+
+gene_cp_snp<-left_join(genes_mut,across_gene,by="gene")
+cor(gene_cp_snp$SNP_f,gene_cp_snp$copy_mean)
+
+genes_mut <- cbind(genes,snp_count_vec,snp_SNP_vec,snp_nonSNP_vec)%>%
+  mutate(gene = Symbol)
+gene_mut_cp <- left_join(genes_mut,across_gene,by = "gene")%>%
+  mutate(SNP_f = snp_SNP_vec/(Length*copy_mean))%>%
+  mutate(non_SNP_f = snp_nonSNP_vec/(Length*copy_mean))%>%
+  select(gene = gene,SNP_f,non_SNP_f)%>%
+  arrange(desc(SNP_f))
+```
+Divide the the Y chromosome into 100kb non-overlapping windows and calculate mutation frequences for each window. Plot mutation frequencies along window positions. What patterns can you see?
+```{r}
+snps%>%
+  mutate(window_block = as.integer(Position/100000))%>%
+  group_by(window_block)%>%
+  summarise(n=n())%>%
+  mutate(rate = n/100000)%>%
+  mutate(start = window_block*100000+1)%>%
+  mutate(end = (window_block+1)*100000)%>%
+  ggplot()+
+  geom_segment(aes(x=start,xend=end,y=rate,yend=rate))+
+  theme_bw()
+```
+Optional exercize B
+Are there differences in mutation frequencies or copy numbers between genes that differ in tissue expression (testis vs. non-testis expression) or regional position (X-degenerate vs. ampliconic)? Are there differences between different Y haplogroups?
+```{r}
+genes<- genes %>% mutate(gene=Symbol)
+gene_sum <- left_join(genes,genes_mut)
+genes_summary <- left_join(gene_sum,across_gene)
+
+genes_summary%>%
+  ggplot(aes(x=Tissue_expression,y=copy_mean))+
+  geom_boxplot()+theme_bw()
+genes_summary%>%
+  ggplot(aes(x=Tissue_expression,y=SNP_f))+
+  geom_boxplot()+theme_bw()
+genes_summary%>%
+  ggplot(aes(x=Tissue_expression,y=non_SNP_f))+
+  geom_boxplot()+theme_bw()
+genes_summary%>%
+  ggplot(aes(x=Class,y=copy_mean))+
+  geom_boxplot()+theme_bw()
+genes_summary%>%
+  ggplot(aes(x=Class,y=SNP_f))+
+  geom_boxplot()+theme_bw()
+genes_summary%>%
+  ggplot(aes(x=Class,y=non_SNP_f))+
+  geom_boxplot()+theme_bw()
+```
+
